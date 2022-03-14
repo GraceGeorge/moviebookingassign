@@ -111,13 +111,29 @@ class Theatreupdate extends React.Component {
                     <div className="form-group">
                         <label>Theatre Id</label>
                         <input className="form-control" value = {this.state.theatre.theatreId} disabled/>
-                    </div>
+                    </div><br></br>
                     <div className="form-group">
                         <label>Theatre Name</label>
-                        <input className="form-control" onChange={this.validateName} placeholder={this.state.theatre.theatreName/>
-                    </div>
+                        <input className="form-control" onChange={this.validateName} placeholder={this.state.theatre.theatreName}/>
+                    </div><br></br>
+                    <div className="form-group">
+                        <label>Location :</label>
+                        <input className="form-control" onChange={this.validateLocation} placeholder={this.state.theatre.theatreLoc}/>
+                    </div><br></br>
+                    <div className="form-group">
+                        <label> Rate :</label>
+                        <input className="form-control" onChange={this.validateRate} placeholder={this.state.theatre.rate}/>
+                    </div><br></br>
+                    <div className="form-group">
+                        <label> Capacity:</label>
+                        <input className="form-control" onChange={this.validateCapacity} placeholder={this.state.theatre.capacity}/>
+                    </div><br></br>
+                    <button type="button" onClick={this.handleSubmit} className="btn btn-success" >
+
+                    Update</button><br />
                 </form>
             </div>
-        )
+        );
     }
 }
+export default Theatreupdate;
