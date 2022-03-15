@@ -26,34 +26,37 @@ class Book extends React.Component {
             console.log("ok confirm book");
         });
     }
-    validateSeats = (e) => {
-        const seats = e.target.value;
-        this.setState({ formValue: {...this.state.formValue, seats:e.target.value}});
-        var formErrors = this.state.formErrors;
-        var fieldValidity = this.state.fieldValidity;
-        var errorMessage = "";
+        validateSeats = (e) => {
+          const seats = e.target.value;
+          this.setState({ formValue: {...this.state.formValue, seats:e.target.value}});
+          var formErrors = this.state.formErrors;
+          var fieldValidity = this.state.fieldValidity;
+          var errorMessage = "";
 
-        if(seats) {
+          if(seats) {
             var regexNum = new RegExp(/^[0-9]/);
-        }
+          
 
-        if(regexNum.test(seats)) {
+          if(regexNum.test(seats)) {
             errorMessage = "";
-        }
-        else {
+          }
+          else {
             errorMessage = errorMessage + "Please enter a number";
+          }
         }
-    }
 
-    if(errorMessage !== "") {
+
+    if(errorMessage !== ""){
         formErrors.seatErr = errorMessage
         this.setState({ formValid : false});
     }
     else {
         formErrors.seatErr = ""
-        this.setState({ formErrorMessage: formErrors});
-        this.setState({ formValid: true})
+        this.setState({ formErrorMessage : formErrors});
+        this.setState({ formValid: true});
     }
+    }
+
     
 handleBooking = (event) => {
     event.preventDefault()

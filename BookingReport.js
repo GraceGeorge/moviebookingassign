@@ -16,7 +16,7 @@ class BookingReport extends React.Component {
             valid: false,
             user: {
                 "userId": sessionStorage.getItem("userId"),
-                "userName": sessionStorage.getItem("userName");
+                "userName": sessionStorage.getItem("userName"),
              }
        };
     }
@@ -66,11 +66,14 @@ class BookingReport extends React.Component {
         yyyy=today.getFullYear();
         return yyyy+"-"+mm+"-"+dd;
     }
-    render() {
+    render() 
+    {
         if(this.state.user.userId===null) {
             alert("Please Login/Register to access full features")
             return <Navigate to="/login"></Navigate>
         }
+    
+    
         return (
             <div style={{ width: 1000, margin: '0px auto'}}>
                 <h1 className="text-center">Booking Id</h1>
